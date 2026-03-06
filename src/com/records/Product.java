@@ -20,6 +20,6 @@ public record Product(String name, BigDecimal cost, String type) {
 
     //Giving default values to parameters
     public Product(String name, BigDecimal cost) {//Our custom constructor
-        this(name, cost, "DEFAULT");
+        this(name, cost, "DEFAULT");// calling canonical constructor using this block
     }
 }
