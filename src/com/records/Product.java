@@ -8,13 +8,18 @@ import java.math.BigInteger;
 public record Product(String name, BigDecimal cost, String type) {
 
     //implementing validation
-    public Product{
-        if(name==null || name.isBlank()){
+    public Product {
+        if (name == null || name.isBlank()) {
             throw new IllegalArgumentException("Invalid name!");
         }
 
-        if(cost.compareTo(BigDecimal.ZERO)<=0){
+        if (cost.compareTo(BigDecimal.ZERO) <= 0) {
             throw new IllegalArgumentException("Invalid Cost Moron!");
         }
+    }
+
+    //Giving default values to parameters
+    public Product(String name, BigDecimal cost) {//Our custom constructor
+        this(name, cost, "DEFAULT");
     }
 }

@@ -30,6 +30,12 @@ public class ProductTest {
     @Test
     void testInvalidCost() {
         var ex = assertThrows(IllegalArgumentException.class, () -> new Product("B.C. Rich", new BigDecimal(0.0), "Guitar"));
-        assertEquals("Invalid Cost Moron!",ex.getMessage());
+        assertEquals("Invalid Cost Moron!", ex.getMessage());
+    }
+
+    @Test
+    void testDefaultParamValue() {
+        var product = new Product("Ibenez", new BigDecimal(4.5));//call goes to custom constructor we created
+        assertEquals("DEFAULT", product.type());
     }
 }
